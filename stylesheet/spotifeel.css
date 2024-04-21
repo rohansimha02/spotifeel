@@ -112,6 +112,10 @@ footer .contact {
   transition: background-color 0.25s ease-in-out;
 }
 
+.dash a{
+  text-decoration: none;
+}
+
 .searchContainer {
   display: flex;
   flex-direction: column;
@@ -160,6 +164,7 @@ footer .contact {
 .searchContainer {
   display: none;
 }
+
 
 @media screen and (min-width: 500px) {
   .material-symbols-outlined {

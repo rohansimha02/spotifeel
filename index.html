@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1 shrink-to-fit=no" />
     <link rel="stylesheet" href="stylesheet/Spotifeel.css" />
     <link
       rel="stylesheet"
@@ -26,15 +26,20 @@
         <!-- dashboard -->
         <div class="dash">
           <ul>
-            <li class="home">
-              <span class="material-symbols-outlined"> home </span>
-              <span class="dashText">HOME</span>
-            </li>
-            <li class="search">
-              <span class="material-symbols-outlined"> search </span>
-              <span class="dashText">SEARCH</span>
-            </li>
-            <li class="more">
+            <a href="index.html" aria-label="Home page">
+              <li class="home">
+                <span class="material-symbols-outlined"> home </span>
+                <span class="dashText">HOME</span>
+              </li>
+            </a>
+
+            <a href="search.html">
+              <li class="search" aria-label="Search Page">
+                <span class="material-symbols-outlined"> search </span>
+                <span class="dashText">SEARCH</span>
+              </li>
+            </a>
+            <li class="more" aria-label="More Info">
               <span class="material-symbols-outlined"> more_horiz </span>
               <span class="dashText">MORE</span>
             </li>
@@ -47,13 +52,12 @@
         </div>
 
         <!-- Search -->
-
       </div>
     </main>
     <footer>
       <p>&copy; INFO340</p>
       <p class="contact">
-        <a href="mailto:rohans24@uw.edu">rohans24@uw.edu</a> 
+        <a href="mailto:rohans24@uw.edu">rohans24@uw.edu</a>
         <a href="mailto:bingsen@uw.edu">bingsen@uw.edu</a>
         <a href="mailto:amanch@uw.edu">amanch@uw.edu</a>
       </p>
