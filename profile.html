@@ -4,8 +4,16 @@
     <meta charset="UTF-8" />
     <meta
       name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+      content="width=device-width, initial-scale=1 shrink-to-fit=no"
     />
+    <meta name="author" content="David Xu" />
+    <meta name="author" content="Rohan Simha" />
+    <meta name="author" content="Arav Manch" />
+    <meta
+      name="description"
+      content="This is the home page of Spotifeel, user could browse their recommended playlist base on their preference"
+    />
+
     <link rel="stylesheet" href="stylesheet/Spotifeel.css" />
     <link
       rel="stylesheet"
@@ -15,7 +23,7 @@
       href="https://fonts.googleapis.com/css2?family=Abel&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
-    <title>SpotiFeel Search</title>
+    <title>SpotiFeel</title>
   </head>
   <body>
     <header>
@@ -42,56 +50,33 @@
                 <span class="dashText">SEARCH</span>
               </li>
             </a>
+
             <li class="more" aria-label="More Info">
               <span class="material-symbols-outlined"> more_horiz </span>
               <span class="dashText">MORE</span>
             </li>
-            <li class="profile" aria-label="User profile">
-              <span class="material-symbols-outlined"> person </span>
-              <span class="dashText">PROFILE</span>
-            </li>
+
+            <a href="profile.html">
+              <li class="profile" aria-label="User profile">
+                <span class="material-symbols-outlined"> person </span>
+                <span class="dashText">PROFILE</span>
+              </li>
+            </a>
           </ul>
         </div>
-        <!-- profile -->
 
-        
-        <div class="searchContainer">
-          <div class="searchHead">
-            <h3>Search</h3>
-            <div class="spacer"></div>
-            <div class="searchButton">
-              <input
-                type="text"
-                class="searchInput"
-                placeholder="Choose Your Emotion"
-              />
-            </div>
-          </div>
-          <div class="searchBody">
-            <table class="table">
-              <thead>
-                <tr>
-                  <th scope="row">Rank</th>
-                  <th scope="row">Artist</th>
-                  <th scope="row">Title</th>
-                  <th scope="row">Album</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td scope="row">1</td>
-                  <td>Keshi</td>
-                  <td>Bandaid</td>
-                  <td>
-                    <a
-                      href="https://www.youtube.com/watch?v=mtoeTzYKyaQ&list=OLAK5uy_mgWZc68SXb-L2rXYragQgzs4u7__6pgo4"
-                      target="_blank"
-                      ><img src="img/bandaid.png" alt="Bandaid Album" />
-                    </a>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+        <!-- Profile -->
+        <div class="userProfile">
+          <h2>Profile</h2>
+
+          <div class="login">
+            <form action="/submit" method="post">
+              <label for="username">User ID:</label>
+              <input type="text" id="name" name="name" /><br /><br />
+              <label for="password">Password:</label>
+              <input type="email" id="email" name="email" /><br /><br />
+              <input type="submit" value="Submit" />
+            </form>
           </div>
         </div>
       </div>
