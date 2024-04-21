@@ -212,7 +212,49 @@ input[type="submit"] {
   margin-left: 0;
 }
 
+
+.searchBody {
+  max-height: 400px; 
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.table {
+  margin: 0 20px;
+  border-collapse: collapse;
+  color: white;
+  font-family: "Abel", sans-serif;
+  overflow-y: scroll;
+}
+
+thead th {
+  height: 100px;
+  text-align: left;
+}
+
+tbody tr td img {
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
+}
+
+thead th,
+tbody tr td {
+  padding: 5px;
+  margin: 0 50px;
+  border-bottom: 1px solid #d3d3d3;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+
 @media screen and (min-width: 500px) {
+
   .material-symbols-outlined {
     color: white;
     font-variation-settings: "FILL" 0, "wght" 200, "GRAD" 0, "opsz" 30;
@@ -247,10 +289,18 @@ input[type="submit"] {
   .login {
     margin-top: 4%;
   }
+
+  .searchContainer .table {
+    margin-left: 30px;
+    width: 100%;
+    overflow-y: scroll;
+  }
+
   footer {
     display: flex;
     flex-direction: column;
     align-items: end;
+    margin-top: 50px;
   }
 
   footer p {
