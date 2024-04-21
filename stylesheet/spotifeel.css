@@ -3,6 +3,10 @@ html {
   height: 100%;
 }
 
+body {
+  overflow-y: hidden;
+}
+
 .headerCon {
   display: flex;
   align-items: center;
@@ -26,7 +30,6 @@ body {
   background: linear-gradient(to bottom, rgb(23, 45, 23), black);
 }
 
-
 header img {
   width: 110px;
   height: 110px;
@@ -44,7 +47,7 @@ header img {
   height: 100vh;
 }
 
-.dash ul{
+.dash ul {
   padding: auto;
 }
 
@@ -53,6 +56,9 @@ header img {
   padding-left: 10px;
   color: white;
   list-style-type: none;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
 }
 
 .dashText {
@@ -60,4 +66,20 @@ header img {
   margin-left: 12px;
   font-family: "Abel", sans-serif;
   font-size: 20px;
+}
+
+.mainContainer {
+  display: flex;
+}
+
+.recommendContainer h2 {
+  color: white;
+  font-family: "Abel", sans-serif;
+  font-size: 40px;
+  margin-top: 10px;
+}
+
+.recommendContainer{
+  width: 100vw;
+  padding-left: 55px;
 }
