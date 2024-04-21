@@ -48,12 +48,12 @@ header img {
 }
 
 .dash ul {
-  padding: auto;
+  padding-left: 0;
 }
 
 .dash li {
   padding: 30px;
-  padding-left: 10px;
+  padding-left: 30px;
   color: white;
   list-style-type: none;
   display: flex;
@@ -75,11 +75,18 @@ header img {
 .recommendContainer h2 {
   color: white;
   font-family: "Abel", sans-serif;
-  font-size: 40px;
+  font-size: 30px;
   margin-top: 10px;
+  letter-spacing: 1.2px;
 }
 
-.recommendContainer{
+.recommendContainer {
   width: 100vw;
   padding-left: 55px;
+}
+
+.dash .home:hover {
+  background: rgba(18, 89, 36, 0.497);
+  border-radius: 10px;
+  transition: background-color 0.25s ease-in-out;
 }
