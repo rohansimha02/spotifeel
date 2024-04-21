@@ -3,6 +3,10 @@ html {
   overflow-y: hidden;
 }
 
+.spacer {
+  flex-grow: 1;
+}
+
 body {
   height: 100vh;
   left: 0;
@@ -39,6 +43,7 @@ header img {
 
 .dash {
   display: flex;
+  flex-direction: column;
 }
 
 main {
@@ -62,9 +67,14 @@ main {
   display: none;
 }
 
-h2 {
+.recommendContainer h2 {
   color: white;
   font-family: "Abel", sans-serif;
+  font-size: 30px;
+  margin-top: 30px;
+  font-weight: 300;
+  padding: 0;
+  letter-spacing: 1px;
 }
 
 .recommendContainer {
@@ -92,6 +102,7 @@ footer .contact {
   display: flex;
   flex: 1;
   height: 100%;
+  width: 100vw;
 }
 
 .dash .home:hover {
@@ -112,28 +123,24 @@ footer .contact {
   transition: background-color 0.25s ease-in-out;
 }
 
-.dash a{
+.dash a {
   text-decoration: none;
 }
 
 .searchContainer {
   display: flex;
   flex-direction: column;
-  width: 100vw;
+  width: 100%;
 }
 
-.searchContainer h3 {
+h3 {
   color: white;
   font-family: "Abel", sans-serif;
   font-size: 30px;
-  letter-spacing: 1px;
-  font-weight: 400;
+  letter-spacing: 0.2px;
+  font-weight: 300;
   margin-left: 20px;
-  display: flex;
-}
-
-.spacer {
-  flex-grow: 1;
+  text-align: center;
 }
 
 .searchButton {
@@ -148,11 +155,12 @@ footer .contact {
   padding-left: 15px;
   border-radius: 20px;
   font-size: 15px;
-  background: #ffffff;
+  background: #eaf0e5;
+  font-family: "Abel", sans-serif;
 }
 
 .searchInput:focus {
-  background: #afafaf42;
+  background: #eaf5eeb1;
   transition: 0.2s ease;
 }
 
@@ -161,19 +169,10 @@ footer .contact {
   align-content: center;
 }
 
-.searchContainer {
-  display: none;
-}
-
-
 @media screen and (min-width: 500px) {
   .material-symbols-outlined {
     color: white;
     font-variation-settings: "FILL" 0, "wght" 200, "GRAD" 0, "opsz" 30;
-  }
-
-  .dash {
-    display: flex;
   }
 
   .dash ul {
@@ -200,19 +199,6 @@ footer .contact {
 
   .mainContainer {
     display: flex;
-  }
-
-  .recommendContainer h2 {
-    color: white;
-    font-family: "Abel", sans-serif;
-    font-size: 30px;
-    margin-top: 10px;
-    letter-spacing: 1.2px;
-  }
-
-  .recommendContainer {
-    width: 100vw;
-    padding-left: 55px;
   }
 
   footer {
