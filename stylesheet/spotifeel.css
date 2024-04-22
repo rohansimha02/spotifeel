@@ -250,10 +250,11 @@ label {
   font-size: 20px;
 }
 
-input {
+.login input {
   margin-left: 10px;
   border-radius: 10px;
   align-items: center;
+  padding-left: 8px;
 }
 
 input[type="submit"] {
@@ -316,7 +317,7 @@ footer {
     overflow-y: scroll;
   }
 
-  .searchBody{
+  .searchBody {
     max-height: 400px;
   }
 
