@@ -359,3 +359,83 @@ footer {
 }
 
 }
+
+.recommendation-section {
+  background-color: #0d0d0d; /* Dark background to match theme */
+  color: #ffffff; /* White text color for readability */
+  font-family: 'Nunito Sans', sans-serif; /* Font family from your theme */
+  padding: 20px;
+  border-radius: 8px;
+  margin: 20px 0;
+}
+
+.recommendation-title {
+  color: #1DB954; /* Spotify green for headers */
+  font-size: 1.5em;
+  margin-bottom: 0.5em;
+}
+
+.recommendation-description {
+  font-size: 1em;
+  margin-bottom: 1em;
+}
+
+.song-input-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 1em;
+}
+
+.song-input {
+  flex-grow: 1;
+  padding: 10px;
+  border: 1px solid #333;
+  background-color: #121212;
+  color: #fff;
+  border-radius: 20px;
+}
+
+.recommend-button {
+  background-color: #1DB954; /* Spotify green */
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  color: #fff;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.recommend-button:hover {
+  background-color: #169443; /* Darker green on hover */
+}
+
+.recommendation-results {
+  background-color: #121212; /* Dark background for results */
+  padding: 15px;
+  border-left: 4px solid #1DB954; /* Green accent line */
+  border-radius: 8px;
+}
+
+.emotion-detected {
+  font-style: italic;
+  margin-bottom: 1em;
+}
+
+.emotion {
+  font-weight: bold;
+}
+
+.recommended-songs h4 {
+  color: #1DB954; /* Spotify green for recommended songs title */
+  margin-bottom: 0.5em;
+}
+
+.recommended-songs ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.recommended-songs ul li {
+  padding: 5px 0;
+}
