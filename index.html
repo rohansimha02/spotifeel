@@ -67,7 +67,26 @@
 
         <!-- Recommend Section with Search Bar -->
         <div class="recommend">
-          <h2>RECOMMEND</h2>
+          <div class="recommendation-section">
+            <h3 class="recommendation-title">Find Songs by Emotion</h3>
+            <p class="recommendation-description">Enter one or more songs to discover new music matching the emotion of your selection.</p>
+            <div class="song-input-container">
+              <input type="text" id="songInput" class="song-input" placeholder="Type song names separated by commas">
+              <button type="button" class="recommend-button">Get Recommendations</button>
+            </div>
+            <div class="recommendation-results">
+              <p class="emotion-detected">Emotion Detected: <span class="emotion">Joyful</span></p>
+              <div class="recommended-songs">
+                <h4>Recommended Songs:</h4>
+                <ul>
+                  <li>"Happy Now" by Zedd, Elley Duhé</li>
+                  <li>"Joy" by Bastille</li>
+                  <li>"Walking on Sunshine" by Katrina and the Waves</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          
         </div>
       </div>
     </main>
