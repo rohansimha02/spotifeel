@@ -1,3 +1,5 @@
+/* Web Page Layout */
+/* Also default for small screen */
 html {
   overflow-x: hidden;
   overflow-y: hidden;
@@ -20,6 +22,14 @@ body {
   background: linear-gradient(to bottom, rgb(23, 45, 23), black);
 }
 
+.mainContainer {
+  display: flex;
+  flex: 1;
+  height: 100%;
+  width: 100vw;
+}
+
+/* Header layout */
 .headerCon {
   display: flex;
   align-items: center;
@@ -40,6 +50,8 @@ header img {
   margin: 5px;
   margin-bottom: 0;
 }
+
+/* Dashboard */
 
 .dash {
   display: flex;
@@ -67,42 +79,9 @@ main {
   display: none;
 }
 
-h2 {
-  color: white;
-  font-family: "Abel", sans-serif;
-  font-size: 30px;
-  margin-top: 30px;
-  font-weight: 300;
-  padding: 0;
-  letter-spacing: 1px;
-}
-
-.recommend {
-  width: 100vw;
-  padding-left: 25px;
-  display: flex;
-}
-
-footer {
-  color: white;
-  font-family: "Abel", sans-serif;
-  font-size: 10px;
-}
-
-footer .contact {
-  display: none;
-}
-
 .material-symbols-outlined {
   color: white;
   font-variation-settings: "FILL" 0, "wght" 200, "GRAD" 0, "opsz" 30;
-}
-
-.mainContainer {
-  display: flex;
-  flex: 1;
-  height: 100%;
-  width: 100vw;
 }
 
 .dash .home:hover {
@@ -133,6 +112,38 @@ footer .contact {
   text-decoration: none;
 }
 
+/* Recommend page layout */
+
+h2 {
+  color: white;
+  font-family: "Abel", sans-serif;
+  font-size: 30px;
+  margin-top: 30px;
+  font-weight: 300;
+  padding: 0;
+  letter-spacing: 1px;
+}
+
+.recommend {
+  width: 100vw;
+  padding-left: 25px;
+  display: flex;
+}
+
+/* Footer layout */
+
+footer {
+  color: white;
+  font-family: "Abel", sans-serif;
+  font-size: 10px;
+}
+
+footer .contact {
+  display: none;
+}
+
+/* Search Page Layout */
+
 .searchContainer {
   display: flex;
   flex-direction: column;
@@ -149,6 +160,7 @@ h3 {
   text-align: center;
 }
 
+/* Search buttom */
 .searchButton {
   display: flex;
   padding: 20px 10px;
@@ -175,46 +187,10 @@ h3 {
   align-content: center;
 }
 
-.userProfile {
-  display: flex;
-  flex-direction: column;
-  width: 100vw;
-}
-
-.userProfile h2 {
-  padding-left: 25px;
-}
-
-.login {
-  display: flex;
-  flex-direction: column;
-  margin-top: 20%;
-  margin-left: 15%;
-  color: white;
-  font-family: "Abel", sans-serif;
-  height: 100%;
-  width: 100vw;
-}
-
-label {
-  font-size: 20px;
-}
-
-input {
-  margin-left: 10px;
-  border-radius: 10px;
-  align-items: center;
-}
-
-input[type="submit"] {
-  background-color: green;
-  color: white;
-  margin-left: 0;
-}
-
+/* Search Page songs */
 
 .searchBody {
-  max-height: 400px; 
+  max-height: 400px;
   overflow-y: auto;
   overflow-x: hidden;
 }
@@ -245,6 +221,49 @@ tbody tr td {
   border-bottom: 1px solid #d3d3d3;
 }
 
+/* Profile layout */
+
+.userProfile {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+}
+
+.userProfile h2 {
+  padding-left: 25px;
+}
+
+/* Login form */
+
+.login {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20%;
+  margin-left: 15%;
+  color: white;
+  font-family: "Abel", sans-serif;
+  height: 100%;
+  width: 100vw;
+}
+
+label {
+  font-size: 20px;
+}
+
+input {
+  margin-left: 10px;
+  border-radius: 10px;
+  align-items: center;
+}
+
+input[type="submit"] {
+  background-color: rgb(3, 62, 3);
+  color: white;
+  margin-left: 0;
+}
+
+/* Footer layout*/
+
 footer {
   display: flex;
   flex-direction: column;
@@ -253,12 +272,9 @@ footer {
   margin-bottom: 20px;
 }
 
+/* Large screen  */
 @media screen and (min-width: 500px) {
-
-  .material-symbols-outlined {
-    color: white;
-    font-variation-settings: "FILL" 0, "wght" 200, "GRAD" 0, "opsz" 30;
-  }
+  /* Dashboard change layout */
 
   .dash ul {
     padding-left: 10px;
@@ -286,15 +302,21 @@ footer {
     display: flex;
   }
 
+  /* Profile page change margin */
+
   .login {
     margin-top: 4%;
   }
+
+  /* Search page change layout */
 
   .searchContainer .table {
     margin-left: 30px;
     width: 100%;
     overflow-y: scroll;
   }
+
+  /* Footer change layout */
 
   footer {
     display: flex;
