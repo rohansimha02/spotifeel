@@ -11,7 +11,7 @@
     <meta name="author" content="Arav Manch" />
     <meta
       name="description"
-      content="This is the home page of Spotifeel, user could browse their recommended playlist base on their preference"
+      content="This is the home page of Spotifeel, user could browse their recommended playlist based on their preference"
     />
     <title>SpotiFeel</title>
 
@@ -65,9 +65,13 @@
           </ul>
         </div>
 
-        <!-- recommend -->
+        <!-- Recommend Section with Search Bar -->
         <div class="recommend">
           <h2>RECOMMEND</h2>
+          <div class="songSearch">
+            <input type="text" id="songSearchInput" placeholder="Search for a song..." aria-label="Search Songs">
+            <button type="button" onclick="searchSong()">Search</button>
+          </div>
         </div>
       </div>
     </main>

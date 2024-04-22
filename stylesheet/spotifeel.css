@@ -358,4 +358,36 @@ footer {
   color: black;
 }
 
+/* Song Search Styling */
+.songSearch {
+  margin: 20px;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#songSearchInput {
+  width: 60%;
+  padding: 8px 12px;
+  margin-right: 10px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  font-family: "Nunito Sans", sans-serif;
+}
+
+button {
+  padding: 8px 16px;
+  border-radius: 20px;
+  background-color: #4CAF50; /* Green */
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-family: "Nunito Sans", sans-serif;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
 }
