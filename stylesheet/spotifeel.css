@@ -238,8 +238,8 @@ tbody tr td {
 .login {
   display: flex;
   flex-direction: column;
-  margin-top: 20%;
-  margin-left: 15%;
+  margin-top: 8%;
+  margin-left: 5%;
   color: white;
   font-family: "Abel", sans-serif;
   height: 100%;
@@ -247,7 +247,7 @@ tbody tr td {
 }
 
 label {
-  font-size: 20px;
+  font-size: 10px;
 }
 
 .login input {
@@ -255,12 +255,17 @@ label {
   border-radius: 10px;
   align-items: center;
   padding-left: 8px;
+  width: 150px;
+  height: 10px;
 }
 
 input[type="submit"] {
   background-color: rgb(3, 62, 3);
   color: white;
   margin-left: 0;
+  font-size: 10px;
+  width: 60px;
+  height: 20px;
 }
 
 /* Footer layout*/
@@ -307,8 +312,13 @@ footer {
 
   .login {
     margin-top: 4%;
+    margin-left: 15%;
+
   }
 
+  .label{
+    font-size: 20px;
+  }
   /* Search page change layout */
 
   .searchContainer .table {
