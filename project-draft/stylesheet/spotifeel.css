@@ -40,7 +40,7 @@ body {
 .headerCon img {
     width: 70px;
     height: 70px;
-    padding-left: 30px;
+    padding: 5px 20px;
 }
 h1 {
     margin: 10px 0;
