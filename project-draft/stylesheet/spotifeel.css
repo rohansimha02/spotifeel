@@ -37,6 +37,11 @@ body {
     height: fit-content;
 }
 
+.headerCon img {
+    width: 70px;
+    height: 70px;
+    padding-left: 30px;
+}
 h1 {
     margin: 10px 0;
     font-family: 'Abel', sans-serif;
