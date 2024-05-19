@@ -1,110 +1,50 @@
 import React, { useState } from 'react';
 import '../src/index.css';
-import logo from '../src/img/logo.png';
-import bandaidCover from '../src/img/bandaid.png';
-import evermoreCover from '../src/img/evermore.webp';
-import gabrielCover from '../src/img//gabriel.jpg';
-import haruCover from '../src/img/haru.jpg';
 
-const Header = () => (
-    <header>
-        <div className="headerCon">
-            <img src={logo} alt="Logo for Spotifeel" />
-            <h1>SpotiFeel</h1>
-        </div>
-    </header>
-);
-
-const Dashboard = () => (
-    <div className="dash">
-        <ul>
-            <a href="/">
-                <li className="home" aria-label="Home page">
-                    <span className="material-symbols-outlined">home</span>
-                    <span className="dashText">HOME</span>
-                </li>
-            </a>
-            <a href="/search">
-                <li className="search" aria-label="Search Page">
-                    <span className="material-symbols-outlined">search</span>
-                    <span className="dashText">SEARCH</span>
-                </li>
-            </a>
-            <a href="/profile">
-                <li className="profile" aria-label="User profile">
-                    <span className="material-symbols-outlined">person</span>
-                    <span className="dashText">PROFILE</span>
-                </li>
-            </a>
-        </ul>
-    </div>
-);
-
-const SearchBody = () => {
-    const [songs, setSongs] = useState([
-        {
-            name: 'Bandaid',
-            artist: 'Keshi',
-            emotion: 'Sad',
-            cover: bandaidCover,
-        },
-        {
-            name: 'Evermore',
-            artist: 'Taylor Swift',
-            emotion: 'Sad',
-            cover: evermoreCover,
-        },
-        {
-            name: 'Gabriel',
-            artist: 'Keshi',
-            emotion: 'Slow, Sad',
-            cover: gabrielCover,
-        },
-        {
-            name: 'Haru Dorobo',
-            artist: 'Yorushika',
-            emotion: 'Lively, Sad',
-            cover: haruCover,
-        },
-    ]);
-
-    return (
-        <div className="searchBody">
-            <table className="table">
-                <thead>
-                    <tr>
-                        <th scope="row">Song</th>
-                        <th scope="row">Artist</th>
-                        <th scope="row">Emotion</th>
-                        <th scope="row">Cover</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {songs.map((song, index) => (
-                        <tr key={index}>
-                            <td scope="row">{song.name}</td>
-                            <td>{song.artist}</td>
-                            <td>{song.emotion}</td>
-                            <td>
-                                <img
-                                    src={song.cover}
-                                    alt={`${song.name} cover`}
-                                />
-                            </td>
-                        </tr>
-                    ))}
-                </tbody>
-            </table>
-        </div>
-    );
-};
-
-const Search = () => (
+const Search = ({ navigate }) => (
     <div className="Search">
-        <Header />
+        <header>
+            <div className="headerCon">
+                <img src="../img/logo.png" alt="Logo for Spotifeel" />
+                <h1>SpotiFeel</h1>
+            </div>
+        </header>
         <main>
             <div className="mainContainer">
-                <Dashboard />
+                <div className="dash">
+                    <ul>
+                        <li
+                            className="home"
+                            aria-label="Home page"
+                            onClick={() => navigate('home')}
+                        >
+                            <span className="material-symbols-outlined">
+                                home
+                            </span>
+                            <span className="dashText">HOME</span>
+                        </li>
+                        <li
+                            className="search"
+                            aria-label="Search Page"
+                            onClick={() => navigate('search')}
+                        >
+                            <span className="material-symbols-outlined">
+                                search
+                            </span>
+                            <span className="dashText">SEARCH</span>
+                        </li>
+                        <li
+                            className="profile"
+                            aria-label="User profile"
+                            onClick={() => navigate('profile')}
+                        >
+                            <span className="material-symbols-outlined">
+                                person
+                            </span>
+                            <span className="dashText">PROFILE</span>
+                        </li>
+                    </ul>
+                </div>
                 <div className="searchContainer">
                     <div className="searchHead">
                         <h3>Search</h3>
@@ -124,7 +64,64 @@ const Search = () => (
                             </select>
                         </div>
                     </div>
-                    <SearchBody />
+                    <div className="searchBody">
+                        <table className="table">
+                            <thead>
+                                <tr>
+                                    <th scope="row">Song</th>
+                                    <th scope="row">Artist</th>
+                                    <th scope="row">Emotion</th>
+                                    <th scope="row">Cover</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td scope="row">Bandaid</td>
+                                    <td>Keshi</td>
+                                    <td>Sad</td>
+                                    <td>
+                                        <img
+                                            src="../img/bandaid.png"
+                                            alt="Bandaid cover"
+                                        />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td scope="row">Evermore</td>
+                                    <td>Taylor Swift</td>
+                                    <td>Sad</td>
+                                    <td>
+                                        <img
+                                            src="../img/evermore.webp"
+                                            alt="Evermore cover"
+                                        />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td scope="row">Gabriel</td>
+                                    <td>Keshi</td>
+                                    <td>Slow, Sad</td>
+                                    <td>
+                                        <img
+                                            src="../img/gabriel.jpg"
+                                            alt="Gabriel cover"
+                                        />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td scope="row">Haru Dorobo</td>
+                                    <td>Yorushika</td>
+                                    <td>Lively, Sad</td>
+                                    <td>
+                                        <img
+                                            src="../img/haru.jpg"
+                                            alt="Harudorobo cover"
+                                        />
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </main>
