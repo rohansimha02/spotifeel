@@ -1,9 +1,9 @@
 // src/App.js
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Home from './components/Home';
-import Search from './components/Search';
-import Profile from './components/Profile';
+import Home from './home';
+import Search from './search';
+import Profile from './profile';
 import './App.css';
 
 function App() {
