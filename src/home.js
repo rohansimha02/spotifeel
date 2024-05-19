@@ -1,7 +1,7 @@
 // src/components/Home.js
 import React, { useState } from 'react';
-import '../index.css';
-import logo from '../img/logo.png';
+import '../src/index.css';
+import logo from '../src/img/logo.png';
 
 const Header = () => (
     <header>

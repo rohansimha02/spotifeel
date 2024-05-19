@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import '../App.css';
-import logo from '../public/img/Logo.png';
-import bandaidCover from '../public/img/bandaid.png';
-import evermoreCover from '../public/img/evermore.webp';
-import gabrielCover from '../public/img/gabriel.jpg';
-import haruCover from '../public/img/haru.jpg';
+import '../src/index.css';
+import logo from '../src/img/logo.png';
+import bandaidCover from '../src/img/bandaid.png';
+import evermoreCover from '../src/img/evermore.webp';
+import gabrielCover from '../src/img//gabriel.jpg';
+import haruCover from '../src/img/haru.jpg';
 
 const Header = () => (
     <header>
