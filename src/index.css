@@ -1,0 +1,560 @@
+/* Web Page Layout */
+/* Also default for small screen */
+html {
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+.spacer {
+    flex-grow: 1;
+}
+
+body {
+    height: 100vh;
+    left: 0;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    box-sizing: border-box;
+    margin: 0;
+    background: linear-gradient(to bottom, rgb(23, 45, 23), black);
+}
+
+.mainContainer {
+    display: flex;
+    flex: 1;
+    height: 100%;
+    width: 100vw;
+}
+
+/* Header layout */
+.headerCon {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: fit-content;
+}
+
+.headerCon img {
+    width: 70px;
+    height: 70px;
+    padding: 5px 20px;
+}
+h1 {
+    margin: 10px 0;
+    font-family: 'Abel', sans-serif;
+    font-size: 3em;
+    color: white;
+}
+
+header img {
+    width: 110px;
+    height: 110px;
+    margin: 5px;
+    margin-bottom: 0;
+}
+
+/* Dashboard */
+
+.dash {
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex-grow: 1;
+}
+
+.dash ul {
+    padding-left: 0px;
+}
+
+.dash li {
+    padding: 10px;
+    color: white;
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.dashText {
+    display: none;
+}
+
+.material-symbols-outlined {
+    color: white;
+    font-variation-settings: 'FILL' 0, 'wght' 200, 'GRAD' 0, 'opsz' 30;
+}
+
+.dash .home:hover {
+    background: rgba(92, 92, 92, 0.4);
+    border-radius: 8px;
+    transition: background-color 0.25s ease-in-out;
+}
+
+.dash .search:hover {
+    background: rgba(92, 92, 92, 0.4);
+    border-radius: 8px;
+    transition: background-color 0.25s ease-in-out;
+}
+
+.dash .more:hover {
+    background: rgba(92, 92, 92, 0.4);
+    border-radius: 8px;
+    transition: background-color 0.25s ease-in-out;
+}
+
+.dash .profile:hover {
+    background: rgba(92, 92, 92, 0.4);
+    border-radius: 8px;
+    transition: background-color 0.25s ease-in-out;
+}
+
+.dash a {
+    text-decoration: none;
+}
+
+/* Recommend page layout */
+
+h2 {
+    color: white;
+    font-family: 'Abel', sans-serif;
+    font-size: 30px;
+    margin-top: 30px;
+    font-weight: 300;
+    padding: 0;
+    letter-spacing: 1px;
+}
+
+.recommend {
+    width: 100vw;
+    padding-left: 25px;
+    display: flex;
+    font-family: 'Abel', sans-serif;
+}
+
+.recommendation-section {
+    width: 60vw;
+    background-color: #0d0d0d;
+    color: #ffffff;
+    font-family: 'Abel', sans-serif;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+}
+
+.recommendation-title {
+    color: #1db954;
+    font-size: 1.5em;
+    margin-bottom: 0.5em;
+    font-family: 'Abel', sans-serif;
+    align-content: start;
+}
+
+.recommendation-description {
+    font-size: 1em;
+    margin-bottom: 1em;
+    font-family: 'Abel', sans-serif;
+}
+
+.song-input {
+    width: 50%;
+    font-family: 'Abel', sans-serif;
+}
+
+.song-input-container {
+    display: flex;
+}
+.recommend-button {
+    width: 50%;
+    font-family: 'Abel', sans-serif;
+    letter-spacing: 1px;
+    font-size: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+.recommendation-section {
+    background-color: #0d0d0d;
+    color: #ffffff;
+    font-family: 'Nunito Sans', sans-serif;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+}
+
+.recommendation-title {
+    color: #1db954;
+    font-size: 1.5em;
+    margin-bottom: 0.5em;
+}
+
+.recommendation-description {
+    font-size: 1em;
+    margin-bottom: 1em;
+}
+
+.song-input-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 1em;
+}
+
+.song-input {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #333;
+    background-color: #121212;
+    color: #fff;
+    border-radius: 20px;
+}
+
+.recommend-button {
+    background-color: #1db954;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    color: #fff;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.recommend-button:hover {
+    background-color: #169443;
+}
+
+.recommendation-results {
+    background-color: #121212;
+    padding: 15px;
+    border-left: 4px solid #1db954;
+    border-radius: 8px;
+    font-family: 'Abel', sans-serif;
+}
+
+.emotion-detected {
+    font-style: italic;
+    margin-bottom: 1em;
+}
+
+.emotion {
+    font-weight: bold;
+}
+
+.recommended-songs h4 {
+    color: #1db954;
+    margin-bottom: 0.5em;
+}
+
+.recommended-songs ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.recommended-songs ul li {
+    padding: 5px 0;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.section-header h3 {
+    text-align: left;
+}
+.sortSelection {
+    margin-right: 20px;
+    color: white;
+    font-family: 'Abel', sans-serif;
+}
+
+.sortDropdown {
+    padding: 8px 16px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    font-family: 'Abel', sans-serif;
+    color: black;
+}
+
+/* Footer layout */
+
+footer {
+    color: white;
+    font-family: 'Abel', sans-serif;
+    font-size: 10px;
+}
+
+footer .contact {
+    display: none;
+}
+
+/* Search Page Layout */
+
+.searchContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+h3 {
+    color: white;
+    font-family: 'Abel', sans-serif;
+    font-size: 30px;
+    letter-spacing: 0.2px;
+    font-weight: 300;
+    margin-left: 10px;
+    text-align: center;
+}
+
+/* Search buttom */
+.searchButton {
+    display: flex;
+    padding: 20px 10px;
+    align-items: center;
+}
+
+.searchInput {
+    width: 200px;
+    height: 30px;
+    padding-left: 15px;
+    border-radius: 20px;
+    font-size: 15px;
+    background: #eaf0e5;
+    font-family: 'Abel', sans-serif;
+}
+
+.searchInput:focus {
+    background: #eaf5eeb1;
+    transition: 0.2s ease;
+}
+
+.searchHead {
+    display: flex;
+    align-content: center;
+}
+
+/* Search Page songs */
+
+.searchBody {
+    max-height: 750px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.table {
+    margin: 0 20px;
+    border-collapse: collapse;
+    color: white;
+    font-family: 'Abel', sans-serif;
+    overflow-y: scroll;
+}
+
+thead th {
+    height: 100px;
+    text-align: left;
+}
+
+tbody tr td img {
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+}
+
+thead th,
+tbody tr td {
+    padding: 5px;
+    margin: 0 50px;
+    border-bottom: 1px solid #d3d3d3;
+}
+
+/* Profile layout */
+
+.userProfile {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+}
+
+.userProfile h2 {
+    padding-left: 25px;
+}
+
+/* Login form */
+
+.login {
+    display: flex;
+    flex-direction: column;
+    margin-top: 8%;
+    margin-left: 5%;
+    color: white;
+    font-family: 'Abel', sans-serif;
+    height: 100%;
+    width: 100vw;
+}
+
+label {
+    font-size: 10px;
+}
+
+.login input {
+    margin-left: 10px;
+    border-radius: 10px;
+    align-items: center;
+    padding-left: 8px;
+    width: 150px;
+    height: 10px;
+    font-family: 'Abel', sans-serif;
+}
+
+input[type='submit'] {
+    background-color: rgb(3, 62, 3);
+    color: white;
+    margin-left: 0;
+    font-size: 10px;
+    width: 60px;
+    height: 20px;
+}
+
+/* Footer layout*/
+
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+
+/* Large screen  */
+@media screen and (min-width: 500px) {
+    /* Dashboard change layout */
+
+    .dash ul {
+        padding-left: 10px;
+    }
+
+    .dash li {
+        padding: 30px;
+        padding-left: 30px;
+        color: white;
+        list-style-type: none;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    .dashText {
+        display: block;
+        color: white;
+        margin-left: 12px;
+        font-family: 'Abel', sans-serif;
+        font-size: 20px;
+    }
+
+    .mainContainer {
+        display: flex;
+    }
+
+    /* Profile page change margin */
+
+    .login {
+        margin-top: 4%;
+        margin-left: 15%;
+    }
+
+    .login label {
+        font-size: 18px;
+    }
+
+    input[type='submit'] {
+        font-size: 15px;
+        width: 100px;
+        height: 30px;
+    }
+    /* Search page change layout */
+
+    .searchContainer .table {
+        margin-left: 30px;
+        width: 100%;
+        overflow-y: scroll;
+    }
+
+    .searchBody {
+        max-height: 400px;
+    }
+
+    /* Footer change layout */
+
+    footer {
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+        margin-top: 50px;
+    }
+
+    footer p {
+        margin: 5px 20px;
+    }
+
+    footer a {
+        color: white;
+        padding-left: 10px;
+    }
+
+    footer .contact {
+        display: block;
+    }
+
+    /* Sorting Dropdown Styling */
+    .sortSelection {
+        margin: 10px 20px;
+        color: white;
+        font-family: 'Abel', sans-serif;
+    }
+
+    .sortDropdown {
+        padding: 8px 16px;
+        background-color: rgba(255, 255, 255, 0.9);
+        border-radius: 10px;
+        font-family: 'Abel', sans-serif;
+        color: black;
+    }
+
+    /* Song Search Styling */
+    .songSearch {
+        margin: 20px;
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #songSearchInput {
+        width: 60%;
+        padding: 8px 12px;
+        margin-right: 10px;
+        border-radius: 20px;
+        border: 1px solid #ccc;
+        font-family: 'Nunito Sans', sans-serif;
+    }
+
+    button {
+        padding: 8px 16px;
+        border-radius: 20px;
+        background-color: #4caf50; /* Green */
+        color: white;
+        border: none;
+        cursor: pointer;
+        font-family: 'Nunito Sans', sans-serif;
+    }
+
+    button:hover {
+        background-color: #45a049;
+    }
+}
