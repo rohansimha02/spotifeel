@@ -9,9 +9,7 @@ const Dashboard = ({ navigate }) => (
                 aria-label="Home page"
                 onClick={() => navigate('home')}
             >
-                <span className="material-symbols-outlined">
-                    home
-                </span>
+                <span className="material-symbols-outlined">home</span>
                 <span className="dashText">HOME</span>
             </li>
             <li
@@ -19,9 +17,7 @@ const Dashboard = ({ navigate }) => (
                 aria-label="Search Page"
                 onClick={() => navigate('search')}
             >
-                <span className="material-symbols-outlined">
-                    search
-                </span>
+                <span className="material-symbols-outlined">search</span>
                 <span className="dashText">SEARCH</span>
             </li>
             <li
@@ -29,9 +25,7 @@ const Dashboard = ({ navigate }) => (
                 aria-label="User profile"
                 onClick={() => navigate('profile')}
             >
-                <span className="material-symbols-outlined">
-                    person
-                </span>
+                <span className="material-symbols-outlined">person</span>
                 <span className="dashText">PROFILE</span>
             </li>
         </ul>
@@ -40,18 +34,38 @@ const Dashboard = ({ navigate }) => (
 
 const Search = ({ navigate }) => {
     const [songs, setSongs] = useState([
-        { song: 'Bandaid', artist: 'Keshi', emotion: 'Sad', cover: '../img/bandaid.png' },
-        { song: 'Evermore', artist: 'Taylor Swift', emotion: 'Sad', cover: '../img/evermore.webp' },
-        { song: 'Gabriel', artist: 'Keshi', emotion: 'Slow', cover: '../img/gabriel.jpg' },
-        { song: 'Haru Dorobo', artist: 'Yorushika', emotion: 'Lively', cover: '../img/haru.jpg' }
-    ]); // Sample songs data
+        {
+            song: 'Bandaid',
+            artist: 'Keshi',
+            emotion: 'Sad',
+            popularity: 'The Goat',
+        },
+        {
+            song: 'Evermore',
+            artist: 'Taylor Swift',
+            emotion: 'Sad',
+            popularity: 'Queen Taylor',
+        },
+        {
+            song: 'Gabriel',
+            artist: 'Keshi',
+            emotion: 'Slow, Sad',
+            popularity: 'Top Tier',
+        },
+        {
+            song: 'Haru Dorobo',
+            artist: 'Yorushika',
+            emotion: 'Lively, Sad',
+            popularity: 'So Good',
+        },
+    ]);
 
     const [filteredSongs, setFilteredSongs] = useState([]);
 
     const handleSearch = (e) => {
         const userInput = e.target.value.toLowerCase();
-        const filteredSongs = songs.filter(song =>
-            song.emotion.toLowerCase() === userInput
+        const filteredSongs = songs.filter(
+            (song) => song.emotion.toLowerCase() === userInput
         );
         setFilteredSongs(filteredSongs);
     };
@@ -82,7 +96,7 @@ const Search = ({ navigate }) => {
                         </div>
                         <div className="searchBody">
                             {filteredSongs.length === 0 ? (
-                                <p>Type in your EMO!</p>
+                                <p>Type in your emotion to search for songs.</p>
                             ) : (
                                 <table className="table">
                                     <thead>
