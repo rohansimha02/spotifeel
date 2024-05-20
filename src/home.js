@@ -1,13 +1,11 @@
-// src/components/Home.js
 import React, { useState } from 'react';
 import '../src/index.css';
-import logo from '../src/img/logo.png';
 
 const Home = ({ navigate }) => (
-    <div className="Home">
+    <div className="body">
         <header>
-            <div className="headerCon">
-                <img src={logo} alt="Logo for Spotifeel" />
+        <div className="headerCon">
+                <img src="../img/logo.png" alt="Logo for Spotifeel" />
                 <h1>SpotiFeel</h1>
             </div>
         </header>

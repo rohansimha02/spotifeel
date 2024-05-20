@@ -1,9 +1,8 @@
 import React from 'react';
 import '../src/index.css';
-import logo from '../src/img/logo.png';
 
 const Profile = ({ navigate }) => (
-    <div className="Profile">
+    <div className="body">
         <header>
             <div className="headerCon">
                 <img src="../img/logo.png" alt="Logo for Spotifeel" />
