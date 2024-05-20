@@ -1,5 +1,5 @@
 import React from 'react';
-import '../src/index.css';
+import './index.css';
 
 const Profile = ({ navigate }) => (
     <div className="body">

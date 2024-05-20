@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import '../src/index.css';
+import './index.css';
 
 const Home = ({ navigate }) => (
     <div className="body">
         <header>
-        <div className="headerCon">
+            <div className="headerCon">
                 <img src="../img/logo.png" alt="Logo for Spotifeel" />
                 <h1>SpotiFeel</h1>
             </div>

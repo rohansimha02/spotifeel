@@ -1,9 +1,9 @@
 import React from 'react';
-import Home from '../src/home';
-import Search from '../src/search';
-import Profile from '../src/profile';
+import Home from './home';
+import Search from './search';
+import Profile from './profile';
 import { useState } from 'react';
-import '../src/index.css';
+import './index.css';
 
 function App() {
     const [currentPage, setCurrentPage] = useState('home');

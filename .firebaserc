@@ -1,1 +1,5 @@
-{}
+{
+  "projects": {
+    "default": "spotifeel-57b89"
+  }
+}
