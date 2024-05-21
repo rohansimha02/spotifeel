@@ -94,6 +94,13 @@ const Search = ({ navigate }) => {
                                 />
                             </div>
                         </div>
+                        <div className="sortSelection">
+                            <label htmlFor="sortSelect">Sort by:</label>
+                            <select id="sortSelect" className="sortDropdown">
+                                <option value="song">Song Name</option>
+                                <option value="artist">Artist Name</option>
+                            </select>
+                        </div>
                         <div className="searchBody">
                             {filteredSongs.length === 0 ? (
                                 <p>Type in your emotion to search for songs.</p>
