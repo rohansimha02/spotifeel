@@ -47,14 +47,18 @@ const Search = ({ navigate, songs }) => {
                             <div className="searchButton">
                                 <input type="text" className="searchInput" placeholder="Choose Your Emotion" onChange={handleSearch} />
                             </div>
+                            <div className="sortSelection">
+                                <label htmlFor="sortSelect">Sort by:</label>
+                                <select
+                                    id="sortSelect"
+                                    className="sortDropdown"
+                                >
+                                    <option value="song">Song Name</option>
+                                    <option value="artist">Artist Name</option>
+                                </select>
+                            </div>
                         </div>
-                        <div className="sortSelection">
-                            <label htmlFor="sortSelect">Sort by:</label>
-                            <select id="sortSelect" className="sortDropdown">
-                                <option value="song">Song Name</option>
-                                <option value="artist">Artist Name</option>
-                            </select>
-                        </div>
+
                         <div className="searchBody">
                             {filteredSongs.length === 0 ? (
                                 <p>Type in your emotion to search for songs.</p>
