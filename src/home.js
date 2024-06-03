@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './index.css';
 
-const Home = ({ navigate, fetchRecommendations, recommendations }) => {
+const Home = ({ navigate, fetchRecommendations, recommendations, loading, error }) => {
     const [emotion, setEmotion] = useState('');
 
     const handleRecommend = async () => {
@@ -51,11 +51,12 @@ const Home = ({ navigate, fetchRecommendations, recommendations }) => {
                             </p>
                             <div className="song-input-container">
                                 <input type="text" id="songInput" className="song-input" placeholder="Type an emotion" value={emotion} onChange={(e) => setEmotion(e.target.value)} />
-                                <button type="button" className="recommend-button" onClick={handleRecommend}>
-                                    Get Recommendations
+                                <button type="button" className="recommend-button" onClick={handleRecommend} disabled={loading}>
+                                    {loading ? 'Loading...' : 'Get Recommendations'}
                                 </button>
                             </div>
                             <div className="recommendation-results">
+                                {error && <p className="error">{error}</p>}
                                 <p className="emotion-detected">
                                     Emotion Detected: <span className="emotion">{emotion}</span>
                                 </p>
@@ -63,7 +64,7 @@ const Home = ({ navigate, fetchRecommendations, recommendations }) => {
                                     <h4>Recommended Songs:</h4>
                                     <ul>
                                         {recommendations.map((song, index) => (
-                                            <li key={index}>{`${song.track_name} by ${song.artists}`}</li>
+                                            <li key={index}>{`${song.name} by ${song.artists.map(artist => artist.name).join(', ')}`}</li>
                                         ))}
                                     </ul>
                                 </div>

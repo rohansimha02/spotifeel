@@ -20,7 +20,7 @@ const Dashboard = ({ navigate }) => (
     </div>
 );
 
-const Search = ({ navigate, songs }) => {
+const Search = ({ navigate, songs, loading, error }) => {
     const [filteredSongs, setFilteredSongs] = useState([]);
 
     const handleSearch = (e) => {
@@ -60,6 +60,8 @@ const Search = ({ navigate, songs }) => {
                         </div>
 
                         <div className="searchBody">
+                            {loading && <p>Loading...</p>}
+                            {error && <p className="error">{error}</p>}
                             {filteredSongs.length === 0 ? (
                                 <p>Type in your emotion to search for songs.</p>
                             ) : (
