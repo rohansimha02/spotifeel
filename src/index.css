@@ -1,3 +1,6 @@
+
+
+/* index.css */
 /* Web Page Layout */
 /* Also default for small screen */
 html {
@@ -11,8 +14,6 @@ html {
 
 .body {
     height: 100vh;
-    left: 0;
-    top: 0;
     display: flex;
     flex-direction: column;
     overflow-x: hidden;
@@ -26,24 +27,22 @@ html {
     display: flex;
     flex: 1;
     height: 100%;
-    width: 100vw;
 }
 
-/* Header layout */
 .headerCon {
     display: flex;
     align-items: center;
     width: 100%;
-    height: fit-content;
+    padding: 20px;
 }
 
 .headerCon img {
     width: 70px;
     height: 70px;
-    padding: 5px 20px;
+    margin-right: 20px;
 }
+
 h1 {
-    margin: 10px 0;
     font-family: 'Abel', sans-serif;
     font-size: 3em;
     color: white;
@@ -61,10 +60,16 @@ header img {
 .dash {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
 }
 
 main {
     flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .dash ul {
@@ -72,7 +77,7 @@ main {
 }
 
 .dash li {
-    padding: 10px;
+    padding: 20px;
     color: white;
     list-style-type: none;
     display: flex;
@@ -88,7 +93,6 @@ main {
     color: white;
     font-variation-settings: 'FILL' 0, 'wght' 200, 'GRAD' 0, 'opsz' 30;
 }
-
 .dash .home:hover {
     background: rgba(92, 92, 92, 0.4);
     border-radius: 8px;
@@ -107,17 +111,104 @@ main {
     transition: background-color 0.25s ease-in-out;
 }
 
-.dash .profile:hover {
-    background: rgba(92, 92, 92, 0.4);
-    border-radius: 8px;
-    transition: background-color 0.25s ease-in-out;
-}
 
 .dash a {
     text-decoration: none;
 }
+/* Search Page Layout */
+.searchContainer {
+    background-color: #1e1e1e;
+    padding: 20px;
+    border-radius: 6px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    width: 60%;
+    max-width: 700px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto; /* Center horizontally */
+}
 
-/* Recommend page layout */
+.songInputs {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.songInputContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.songInputContainer label {
+    margin-bottom: 5px;
+    color: #1db954;
+}
+
+.songInputContainer input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 4px;
+    border: none;
+    font-size: 16px;
+    background-color: #121212;
+    color: #fff;
+    border: 1px solid #333;
+}
+
+.recommend-button {
+    width: 50%;
+    padding: 10px;
+    border-radius: 4px;
+    background-color: #1db954;
+    color: white;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 0 auto;
+    display: block;
+}
+
+.recommend-button:hover {
+    background-color: #169443;
+}
+
+.recommendation-results {
+    margin-top: 20px;
+    width: 100%;
+    display: none; /* Hide the empty recommendation results section initially */
+}
+
+.emotion-detected {
+    font-size: 1.2em;
+}
+
+.emotion {
+    font-weight: bold;
+}
+
+footer {
+    padding: 20px;
+    font-size: 12px;
+    text-align: center;
+}
+
+footer .contact a {
+    color: white;
+    margin: 0 5px;
+    text-decoration: none;
+}
+
+footer .contact a:hover {
+    text-decoration: underline;
+}
+
+
+/* Other styles */
 
 h2 {
     color: white;
@@ -132,7 +223,6 @@ h2 {
 .recommend {
     width: 100vw;
     height: 50vh;
-
     padding-left: 25px;
     display: flex;
     font-family: 'Abel', sans-serif;
@@ -168,9 +258,6 @@ h2 {
     font-family: 'Abel', sans-serif;
 }
 
-.song-input-container {
-    display: flex;
-}
 .recommend-button {
     width: 50%;
     font-family: 'Abel', sans-serif;
@@ -271,6 +358,7 @@ h2 {
 .section-header h3 {
     text-align: left;
 }
+
 .sortSelection {
     margin-right: 20px;
     color: white;
@@ -281,7 +369,6 @@ h2 {
 .sortSelection label {
     margin-right: 10px;
     font-size: 15px;
-
 }
 
 .sortDropdown {
@@ -290,6 +377,21 @@ h2 {
     border-radius: 10px;
     font-family: 'Abel', sans-serif;
     color: black;
+}
+
+.songDropdown {
+    width: 200px;
+    padding: 8px 16px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    font-family: 'Abel', sans-serif;
+    color: black;
+}
+
+.selectedSongs {
+    margin-top: 10px;
+    color: white;
+    font-family: 'Abel', sans-serif;
 }
 
 /* Footer layout */
@@ -323,7 +425,7 @@ h3 {
     text-align: center;
 }
 
-/* Search buttom */
+/* Search button */
 .searchButton {
     display: flex;
     padding: 20px 10px;
@@ -398,6 +500,7 @@ tbody tr td {
 tbody tr td {
     padding: 10px;
 }
+
 /* Profile layout */
 
 .userProfile {
@@ -555,6 +658,21 @@ footer {
         color: black;
     }
 
+    .songDropdown {
+        width: 200px;
+        padding: 8px 16px;
+        background-color: #ffffff;
+        border-radius: 10px;
+        font-family: 'Abel', sans-serif;
+        color: black;
+    }
+
+    .selectedSongs {
+        margin-top: 10px;
+        color: white;
+        font-family: 'Abel', sans-serif;
+    }
+
     /* Song Search Styling */
     .songSearch {
         margin: 20px;
@@ -587,3 +705,4 @@ footer {
         background-color: #45a049;
     }
 }
+
