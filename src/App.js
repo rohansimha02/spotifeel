@@ -1,8 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Home from './Home';
-import Search from './Search';
-import Profile from './Profile';
+import Home from './home';
+import Search from './search';
+import Profile from './profile';
 import './index.css';
 
 function App() {
