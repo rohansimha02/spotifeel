@@ -60,7 +60,7 @@ const Home = () => {
           <div className="recommend">
             <div className="recommendation-section">
               <div className="section-header">
-                <h3 className="recommendation-title">Find Songs by Emotion</h3>
+                <h2 className="recommendation-title">Find Songs by Emotion</h2>
               </div>
               <p className="recommendation-description">
                 Enter 5 songs to discover new music matching the most common emotion of your selection.
@@ -90,7 +90,7 @@ const Home = () => {
                 <div className="recommendation-results">
                   <p className="emotion-detected">Most Common Emotion: <span className="emotion">{mostCommonEmotion}</span></p>
                   <div className="recommended-songs">
-                    <h4>Recommended Songs:</h4>
+                    <h3>Recommended Songs:</h3>
                     <ul>
                       {recommendations.map((rec, index) => (
                         <li key={index}>"{rec.song}" by {rec.artist}</li>

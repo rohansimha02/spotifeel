@@ -75,7 +75,7 @@ const Search = () => {
                     </div>
                     <div className="searchContainer">
                         <div className="searchHead">
-                            <h3>Search</h3>
+                            <h2>Search</h2>
                             <div className="spacer"></div>
                             <div className="searchButton">
                                 <input
@@ -100,7 +100,7 @@ const Search = () => {
 
                         <div className="searchBody">
                             {sortedSongs.length === 0 ? (
-                                <p>Type in your emotion to search for songs.</p>
+                                <p className='searchTextType'>Type in your emotion to search for songs.</p>
                             ) : (
                                 <table className="table">
                                     <thead>
