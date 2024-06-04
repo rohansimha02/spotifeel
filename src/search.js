@@ -1,52 +1,33 @@
-
-
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { songs } from './songs';
 import './index.css';
 
-const Dashboard = ({ navigate }) => (
-    <div className="dash">
-        <ul>
-            <li className="home" aria-label="Home page" onClick={() => navigate('home')}>
-                <span className="material-symbols-outlined">home</span>
-                <span className="dashText">HOME</span>
-            </li>
-            <li className="search" aria-label="Search Page" onClick={() => navigate('search')}>
-                <span className="material-symbols-outlined">search</span>
-                <span className="dashText">SEARCH</span>
-            </li>
-            <li className="profile" aria-label="User profile" onClick={() => navigate('profile')}>
-                <span className="material-symbols-outlined">person</span>
-                <span className="dashText">PROFILE</span>
-            </li>
-        </ul>
-    </div>
-);
+const Search = () => {
+    const navigate = useNavigate();
+    const [filteredSongs, setFilteredSongs] = useState([]);
+    const [sortCriteria, setSortCriteria] = useState('song');
 
-const Search = ({ navigate, songs }) => {
-    const [selectedSongs, setSelectedSongs] = useState(["", "", ""]);
-    const [recommendation, setRecommendation] = useState(null);
-
-    const handleSongChange = (index, value) => {
-        const newSelectedSongs = [...selectedSongs];
-        newSelectedSongs[index] = value;
-        setSelectedSongs(newSelectedSongs);
+    const handleSearch = (e) => {
+        const userInput = e.target.value.toLowerCase();
+        const filtered = songs.filter(
+            (song) => song.emotion && song.emotion.toLowerCase() === userInput
+        );
+        setFilteredSongs(filtered);
     };
 
-    const handleGetRecommendation = async () => {
-        try {
-            const response = await fetch(`http://localhost:5000/api/recommend`, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ songs: selectedSongs }),
-            });
-            const data = await response.json();
-            setRecommendation(data.emotion);
-        } catch (error) {
-            console.error("Failed to get recommendation:", error);
+    const handleSortChange = (e) => {
+        setSortCriteria(e.target.value);
+    };
+
+    const sortedSongs = filteredSongs.sort((a, b) => {
+        if (sortCriteria === 'song') {
+            return a.song.localeCompare(b.song);
+        } else if (sortCriteria === 'artist') {
+            return a.artist.localeCompare(b.artist);
         }
-    };
+        return 0;
+    });
 
     return (
         <div className="body">
@@ -58,30 +39,89 @@ const Search = ({ navigate, songs }) => {
             </header>
             <main>
                 <div className="mainContainer">
-                    <Dashboard navigate={navigate} />
+                    <div className="dash">
+                        <ul>
+                            <li
+                                className="home"
+                                aria-label="Home page"
+                                onClick={() => navigate('/')}
+                            >
+                                <span className="material-symbols-outlined">
+                                    home
+                                </span>
+                                <span className="dashText">HOME</span>
+                            </li>
+                            <li
+                                className="search"
+                                aria-label="Search Page"
+                                onClick={() => navigate('/search')}
+                            >
+                                <span className="material-symbols-outlined">
+                                    search
+                                </span>
+                                <span className="dashText">SEARCH</span>
+                            </li>
+                            <li
+                                className="profile"
+                                aria-label="User profile"
+                                onClick={() => navigate('/profile')}
+                            >
+                                <span className="material-symbols-outlined">
+                                    person
+                                </span>
+                                <span className="dashText">PROFILE</span>
+                            </li>
+                        </ul>
+                    </div>
                     <div className="searchContainer">
-                        <div className="songInputs">
-                            {selectedSongs.map((song, index) => (
-                                <div key={index} className="songInputContainer">
-                                    <label htmlFor={`song${index + 1}`}>Song {index + 1}</label>
-                                    <input
-                                        type="text"
-                                        id={`song${index + 1}`}
-                                        value={song}
-                                        placeholder="Search for song..."
-                                        onChange={(e) => handleSongChange(index, e.target.value)}
-                                    />
-                                </div>
-                            ))}
+                        <div className="searchHead">
+                            <h3>Search</h3>
+                            <div className="spacer"></div>
+                            <div className="searchButton">
+                                <input
+                                    type="text"
+                                    className="searchInput"
+                                    placeholder="Choose Your Emotion"
+                                    onChange={handleSearch}
+                                />
+                            </div>
+                            <div className="sortSelection">
+                                <label htmlFor="sortSelect">Sort by:</label>
+                                <select
+                                    id="sortSelect"
+                                    className="sortDropdown"
+                                    onChange={handleSortChange}
+                                >
+                                    <option value="song">Song Name</option>
+                                    <option value="artist">Artist Name</option>
+                                </select>
+                            </div>
                         </div>
-                        <button className="recommend-button" onClick={handleGetRecommendation}>
-                            Generate Emotion based on Songs
-                        </button>
-                        <div className="recommendation-results">
-                            {recommendation && (
-                                <p className="emotion-detected">
-                                    The mutual emotion for the selected songs is: <span className="emotion">{recommendation}</span>
-                                </p>
+
+                        <div className="searchBody">
+                            {sortedSongs.length === 0 ? (
+                                <p>Type in your emotion to search for songs.</p>
+                            ) : (
+                                <table className="table">
+                                    <thead>
+                                        <tr>
+                                            <th scope="row">Song</th>
+                                            <th scope="row">Artist</th>
+                                            <th scope="row">Emotion</th>
+                                            <th scope="row">Popularity</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {sortedSongs.map((song, index) => (
+                                            <tr key={index}>
+                                                <td>{song.song}</td>
+                                                <td>{song.artist}</td>
+                                                <td>{song.emotion}</td>
+                                                <td>{song.popularity}</td>
+                                            </tr>
+                                        ))}
+                                    </tbody>
+                                </table>
                             )}
                         </div>
                     </div>
@@ -100,10 +140,3 @@ const Search = ({ navigate, songs }) => {
 };
 
 export default Search;
-
-
-
-
-
-
-
