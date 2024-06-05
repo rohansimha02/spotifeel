@@ -131,8 +131,7 @@ h2 {
 
 .recommend {
     width: 100vw;
-    height: 50vh;
-
+    height: fit-content;
     padding-left: 25px;
     display: flex;
     font-family: 'Abel', sans-serif;
@@ -140,7 +139,7 @@ h2 {
 
 .recommendation-section {
     width: 90%;
-    height: 50vh;
+    height: 100%;
     background-color: #0d0d0d;
     color: #ffffff;
     font-family: 'Abel', sans-serif;
@@ -236,8 +235,14 @@ h2 {
     border-left: 4px solid #1db954;
     border-radius: 8px;
     font-family: 'Abel', sans-serif;
+    height: 40vh;
+    overflow-y: auto;
+    margin-bottom: 20px;
 }
 
+.recommended-songs {
+    height: auto;
+}
 .emotion-detected {
     font-style: italic;
     margin-bottom: 1em;
@@ -365,7 +370,7 @@ h2 {
 .searchBody {
     max-height: 750px;
     overflow-y: auto;
-    overflow-x:visible;
+    overflow-x: visible;
 }
 
 .searchBody p {
@@ -417,7 +422,9 @@ tbody tr td {
 }
 
 .userProfile h2 {
+    display: flex;
     padding-left: 25px;
+    justify-contenty: left;
 }
 
 /* Login form */
@@ -425,7 +432,7 @@ tbody tr td {
 .login {
     display: flex;
     flex-direction: column;
-    margin-top: 8%;
+    margin-top: 5%;
     margin-left: 5%;
     color: white;
     font-family: 'Abel', sans-serif;
@@ -437,13 +444,17 @@ label {
     font-size: 10px;
 }
 
+.login form label {
+    margin-bottom: 30px;
+}
+
 .login input {
     margin-left: 10px;
     border-radius: 10px;
     align-items: center;
     padding-left: 8px;
     width: 150px;
-    height: 10px;
+    height: 20px;
     font-family: 'Abel', sans-serif;
 }
 
@@ -454,6 +465,20 @@ input[type='submit'] {
     font-size: 10px;
     width: 60px;
     height: 20px;
+}
+
+.userProfile {
+    font-family: 'Abel', sans-serif;
+}
+
+.userProfile button {
+    width: 200px;
+    color: white;
+    background-color: #1caf50;
+    border-radius: 12px;
+    margin-top: 20px;
+    font-family: 'Abel', sans-serif;
+    padding: 15px 10px;
 }
 
 /* Footer layout*/
@@ -528,6 +553,13 @@ footer {
         display: relative;
     }
 
+    .login {
+        margin-left: 50px;
+    }
+
+    .login input {
+        margin-bottom: 20px;
+    }
     /* Footer change layout */
 
     footer {
@@ -625,5 +657,9 @@ footer {
 
     button:hover {
         background-color: #45a049;
+    }
+
+    footer {
+        margin-top: 0;
     }
 }

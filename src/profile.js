@@ -1,9 +1,66 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { auth, database, createUserWithEmailAndPassword, signInWithEmailAndPassword } from './firebase';
+import { ref, set, onValue } from 'firebase/database';
+import { onAuthStateChanged } from 'firebase/auth';
 import './index.css';
 
 const Profile = () => {
+  const [userId, setUserId] = useState('');
+  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState('');
+  const [feedback, setFeedback] = useState('');
+  const [loading, setLoading] = useState(false);
+  const [isSignUp, setIsSignUp] = useState(false);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        const userRef = ref(database, 'users/' + user.uid);
+        onValue(userRef, (snapshot) => {
+          const data = snapshot.val();
+          if (data) {
+            setUserId(user.uid);
+            setEmail(data.email);
+          }
+        });
+      } else {
+        setUserId('');
+      }
+    });
+  }, []);
+
+  const handleAuth = (e) => {
+    e.preventDefault();
+    setLoading(true);
+    if (isSignUp) {
+      createUserWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+          const user = userCredential.user;
+          const userRef = ref(database, 'users/' + user.uid);
+          set(userRef, { email: email }).then(() => {
+            setFeedback('Sign-up successful!');
+            setLoading(false);
+          });
+        })
+        .catch((error) => {
+          setFeedback('Sign-up failed: ' + error.message);
+          setLoading(false);
+        });
+    } else {
+      signInWithEmailAndPassword(auth, email, password)
+        .then(() => {
+          setFeedback('Login successful!');
+          setLoading(false);
+          navigate('/profile');
+        })
+        .catch((error) => {
+          setFeedback('Login failed: ' + error.message);
+          setLoading(false);
+        });
+    }
+  };
 
   return (
     <div className="body">
@@ -32,19 +89,22 @@ const Profile = () => {
             </ul>
           </div>
           <div className="userProfile">
-            <h2>Profile</h2>
+            <h2>{isSignUp ? 'Sign Up' : 'Login'}</h2>
             <div className="login">
-              <form action="/submit" method="post">
-                <label htmlFor="username">User ID:</label>
-                <input type="text" name="name" />
-                <br />
+              <form onSubmit={handleAuth}>
+                <label htmlFor="email">Email:</label>
+                <input type="email" name="email" value={email} onChange={(e) => setEmail(e.target.value)} />
                 <br />
                 <label htmlFor="password">Password:</label>
-                <input type="password" name="password" />
+                <input type="password" name="password" value={password} onChange={(e) => setPassword(e.target.value)} />
                 <br />
-                <br />
-                <input type="submit" value="Submit" />
+                <input type="submit" value={isSignUp ? 'Sign Up' : 'Login'} disabled={loading} />
               </form>
+              {loading && <p>Loading...</p>}
+              {feedback && <p>{feedback}</p>}
+              <button onClick={() => setIsSignUp(!isSignUp)}>
+                {isSignUp ? 'Already have an account? Login' : "Don't have an account? Sign Up"}
+              </button>
             </div>
           </div>
         </div>
