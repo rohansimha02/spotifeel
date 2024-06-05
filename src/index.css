@@ -152,6 +152,7 @@ h2 {
     color: #1db954;
     font-size: 1.5em;
     margin-bottom: 0.5em;
+    margin-top: 0;
     font-family: 'Abel', sans-serif;
     align-content: start;
 }
@@ -167,6 +168,16 @@ h2 {
     font-family: 'Abel', sans-serif;
 }
 
+.input-songs-list {
+    font-family: 'Abel', sans-serif;
+    font-size: 15px;
+    display: flex;
+}
+
+.input-songs-list p{
+    margin-right: 10px;
+    margin-top: 0;
+}
 .song-input-container {
     display: flex;
 }
@@ -270,7 +281,7 @@ h2 {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 10px;
+    gap: 10px;    
 }
 
 .section-header h3 {
