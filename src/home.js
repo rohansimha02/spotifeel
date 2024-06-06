@@ -3,13 +3,24 @@ import { useNavigate } from 'react-router-dom';
 import { songs } from './songs';
 import './index.css';
 
+/**
+ * Home component that provides emotion-based music recommendations.
+ * Users can input up to 5 songs to receive recommendations based on the most common emotion.
+ * 
+ * @returns {JSX.Element} Home page with song input and recommendation functionality
+ */
 const Home = () => {
   const navigate = useNavigate();
+  
+  // State for managing user input and recommendations
   const [inputSongs, setInputSongs] = useState([]);
   const [songInput, setSongInput] = useState('');
   const [recommendations, setRecommendations] = useState([]);
   const [mostCommonEmotion, setMostCommonEmotion] = useState('');
 
+  /**
+   * Adds a new song to the input list (maximum 5 songs allowed)
+   */
   const handleAddSong = () => {
     if (songInput && inputSongs.length < 5) {
       setInputSongs([...inputSongs, songInput]);
@@ -17,17 +28,30 @@ const Home = () => {
     }
   };
 
+  /**
+   * Analyzes input songs for emotions and generates recommendations.
+   * Finds the most common emotion and returns up to 10 matching songs.
+   */
   const handleGetRecommendations = () => {
+    // Map each input song to its emotion classification
     const emotions = inputSongs.map(songName => {
       const song = songs.find(s => s.song.toLowerCase() === songName.toLowerCase());
       return song ? song.emotion : 'Undefined';
     });
+    
+    // Count occurrences of each emotion
     const emotionCount = emotions.reduce((acc, emotion) => {
       acc[emotion] = (acc[emotion] || 0) + 1;
       return acc;
     }, {});
-    const commonEmotion = Object.keys(emotionCount).reduce((a, b) => emotionCount[a] > emotionCount[b] ? a : b, 'Undefined');
+    
+    // Find the most frequently occurring emotion
+    const commonEmotion = Object.keys(emotionCount).reduce((a, b) => 
+      emotionCount[a] > emotionCount[b] ? a : b, 'Undefined'
+    );
+    
     setMostCommonEmotion(commonEmotion);
+    // Filter songs by the most common emotion and limit to 10 results
     setRecommendations(songs.filter(song => song.emotion === commonEmotion).slice(0, 10));
   };
 
@@ -41,6 +65,7 @@ const Home = () => {
       </header>
       <main>
         <div className="mainContainer">
+          {/* Navigation sidebar */}
           <div className="dash">
             <ul>
               <li className="home" aria-label="Home page" onClick={() => navigate('/')}>
@@ -57,6 +82,8 @@ const Home = () => {
               </li>
             </ul>
           </div>
+          
+          {/* Main recommendation interface */}
           <div className="recommend">
             <div className="recommendation-section">
               <div className="section-header">
@@ -65,6 +92,8 @@ const Home = () => {
               <p className="recommendation-description">
                 Enter 5 songs to discover new music matching the most common emotion of your selection.
               </p>
+              
+              {/* Song input form */}
               <div className="song-input-container">
                 <input
                   type="text"
@@ -78,6 +107,8 @@ const Home = () => {
                   Add Song
                 </button>
               </div>
+              
+              {/* Display list of input songs */}
               <div className="input-songs-list">
                 {inputSongs.map((song, index) => (
                   <p key={index}>{song}</p>

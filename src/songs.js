@@ -1,14 +1,31 @@
+/**
+ * Music database containing songs with emotion classifications and popularity ratings.
+ * Each song object includes: song title, artist name, emotion category, and popularity score.
+ * 
+ * Emotion categories include:
+ * - Happy: Upbeat, joyful songs
+ * - Sad: Melancholic, sorrowful songs  
+ * - Energetic: High-energy, upbeat songs
+ * - Calm: Peaceful, soothing songs
+ * - Romantic: Love songs and romantic ballads
+ * - Mellow: Relaxed, laid-back songs
+ * - Relaxed: Chill, easy-going songs
+ * - Depressed: Deeply sad, introspective songs
+ * - Angry: Intense, aggressive songs
+ * 
+ * Popularity is rated on a scale of 0-100 based on streaming data.
+ */
 export const songs = [
     { song: 'My Life Would Suck Without You', artist: 'Kelly Clarkson', emotion: 'Energetic', popularity: 53 },
     { song: 'Verano Azul', artist: 'Juan Magán', emotion: 'Happy', popularity: 65 },
     { song: 'Let\'s Get Crazy', artist: 'Hannah Montana', emotion: 'Happy', popularity: 52 },
     { song: "I've Got The World On A String", artist: "Anita O'Day, Oscar Peterson Quartet", emotion: 'Calm', popularity: 16 },
     { song: "Mamita Mia - Remastered", artist: "Frente Popular", emotion: 'Relaxed', popularity: 2 },
-    { song: "Puccini: Madama Butterfly, Act 2: \"Che tua madre dovrà\" (Butterfly)", artist: "Giacomo Puccini, Maria Callas, Herbert von Karajan, Orchestra Del Teatro Alla Scala, Milano", emotion: 'Sad', popularity: 13 },
+    { song: "Puccini: Madama Butterfly, Act 2: \"Che tua madre dovrà\" (Butterfly)", artist: "Giacomo Puccini, Maria Callas, Herbert von Karajan", emotion: 'Sad', popularity: 13 },
     { song: "Stare It Cold", artist: "The Black Crowes", emotion: 'Energetic', popularity: 36 },
-    { song: "Violin Concerto No. 1 in G Minor, Op. 26: II. Adagio", artist: "Max Bruch, Isaac Stern, Eugene Ormandy, Philadelphia Orchestra", emotion: 'Sad', popularity: 0 },
+    { song: "Violin Concerto No. 1 in G Minor, Op. 26: II. Adagio", artist: "Max Bruch, Isaac Stern, Eugene Ormandy", emotion: 'Sad', popularity: 0 },
     { song: "On a Steamer Coming Over", artist: "Roy Fox", emotion: 'Calm', popularity: 1 },
-    { song: "Leoncavallo: Pagliacci, Act I Scene 3: Non mi tentar! (Nedda, Silvio, Tonio)", artist: "Ruggero Leoncavallo, Alfredo Simonetto, Carla Gavazzi, Marcello Rossi, Carlo Tagliabue, Orchestra Sinfonica e Coro di Milano della RAI", emotion: 'Sad', popularity: 0 },
+    { song: "Leoncavallo: Pagliacci, Act I Scene 3: Non mi tentar!", artist: "Ruggero Leoncavallo, Alfredo Simonetto", emotion: 'Sad', popularity: 0 },
     { song: "Symphony No. 4 in E Minor, Op. 98: IV. Allegro energico e passionata", artist: "Johannes Brahms, Arturo Toscanini", emotion: 'Sad', popularity: 0 },
     { song: "Fat Lip", artist: "Sum 41", emotion: 'Energetic', popularity: 72 },
     { song: "Instant Music (Two Beat Society)", artist: "Nelson Riddle", emotion: 'Romantic', popularity: 12 },
@@ -20,14 +37,13 @@ export const songs = [
     { song: "Prabhu Laaj Bhakton Ki Rakhe Sada", artist: "Ratnaprabha", emotion: 'Calm', popularity: 0 },
     { song: "Do What You Want", artist: "Bad Religion", emotion: 'Energetic', popularity: 47 },
     { song: "Red Rubber Ball", artist: "The Cyrkle", emotion: 'Romantic', popularity: 42 },
-    { song: "End Of Act 1: Memory", artist: "Andrew Lloyd Webber, \"Cats\" 1981 Original London Cast, Elaine Paige", emotion: 'Sad', popularity: 49 },
+    { song: "End Of Act 1: Memory", artist: "Andrew Lloyd Webber, Cats Original London Cast", emotion: 'Sad', popularity: 49 },
     { song: "Moody River", artist: "Johnny Burnette, The Johnny Mann Singers", emotion: 'Romantic', popularity: 13 },
     { song: "Twisting by the Pool", artist: "Dire Straits", emotion: 'Energetic', popularity: 34 },
     { song: "You Can't Stop the Beat - Medley", artist: "Laura Bell Bundy, Matthew Morrison, Linda Hart", emotion: 'Energetic', popularity: 43 },
     { song: "Fast Asleep", artist: "Paige Morehead", emotion: 'Calm', popularity: 32 },
-    { song: "Οι δυο σερέτες", artist: "Αντώνης Νταλγκάς", emotion: 'Relaxed', popularity: 0 },
     { song: "Justo el 31 - Remasterizado", artist: "Francisco Canaro", emotion: 'Calm', popularity: 0 },
-    { song: "A Midsummer Night's Dream. Incidental Music, Op. 61: Scherzo - Remastered", artist: "Felix Mendelssohn, Bruno Walter, New York Philharmonic", emotion: 'Relaxed', popularity: 0 },
+    { song: "A Midsummer Night's Dream. Incidental Music, Op. 61: Scherzo - Remastered", artist: "Felix Mendelssohn, Bruno Walter", emotion: 'Relaxed', popularity: 0 },
     { song: "The Two Priests", artist: "Archibald MacLeish", emotion: 'Sad', popularity: 1 },
     { song: "Spybreak! - Short One", artist: "Propellerheads", emotion: 'Energetic', popularity: 44 },
     { song: "Undecided", artist: "George Shearing Quintet", emotion: 'Happy', popularity: 5 },
@@ -35,26 +51,22 @@ export const songs = [
     { song: "Strictly Rule", artist: "Vetiver", emotion: 'Romantic', popularity: 43 },
     { song: "Canadian Sunset - Single Version", artist: "Eddie Heywood", emotion: 'Relaxed', popularity: 25 },
     { song: "Anthony Boy", artist: "Chuck Berry", emotion: 'Happy', popularity: 28 },
-    { song: "Trois Melodies: La Statue de bronze", artist: "Erik Satie, Pierre Bernac, Francis Poulenc", emotion: 'Calm', popularity: 11 },
+    { song: "Trois Melodies: La Statue de bronze", artist: "Erik Satie, Pierre Bernac", emotion: 'Calm', popularity: 11 },
     { song: "Her Ghost in the Fog", artist: "Cradle Of Filth", emotion: 'Energetic', popularity: 45 },
     { song: "Living in America - From \"Rocky IV\" Soundtrack", artist: "James Brown", emotion: 'Happy', popularity: 54 },
     { song: "You're Getting To Be A Habit With Me - Remastered 1998", artist: "Frank Sinatra", emotion: 'Mellow', popularity: 35 },
-    { song: "Zigeunerweisen, Op. 20: Un poco più lento", artist: "Pablo de Sarasate, William Steinberg, Jascha Heifetz", emotion: 'Depressed', popularity: 6 },
+    { song: "Zigeunerweisen, Op. 20: Un poco più lento", artist: "Pablo de Sarasate, William Steinberg", emotion: 'Depressed', popularity: 6 },
     { song: "Up the Down Escalator", artist: "The Chameleons", emotion: 'Energetic', popularity: 39 },
-    { song: "O Nargis Pyare", artist: "Dilshad Begum", emotion: 'Relaxed', popularity: 0 },
     { song: "TROJAN HORSE", artist: "SEBASTIAN PAUL", emotion: 'Happy', popularity: 61 },
     { song: "Wavelength - Remastered", artist: "Van Morrison", emotion: 'Energetic', popularity: 46 },
     { song: "My Heart Stood Still - Live", artist: "Bill Evans Trio", emotion: 'Mellow', popularity: 17 },
     { song: "People Say", artist: "The Dixie Cups", emotion: 'Romantic', popularity: 23 },
     { song: "Fu Man Chu", artist: "Desmond Dekker, The Aces", emotion: 'Romantic', popularity: 47 },
     { song: "Pocketful of Sunshine", artist: "Natasha Bedingfield", emotion: 'Happy', popularity: 63 },
-    { song: "I Puritani (1986 - Remaster), Act III: Ch'ei provò lontan da me?", artist: "Carlo Pepoli, Vincenzo Bellini, Maria Callas, Giuseppe Di Stefano, Orchestra Del Teatro Alla Scala, Milano, Tullio Serafin, Orchestra Del Teatro Alla Scala Di Milan", emotion: 'Sad', popularity: 0 },
-    { song: "Take Me In Your Arms (Rock Me A Little While)", artist: "The Isley Brothers", emotion: 'Happy', popularity: 40 },
-    { song: "Summertime", artist: "Ella Fitzgerald, Louis Armstrong", emotion: 'Relaxed', popularity: 60 },
     { song: "Bohemian Rhapsody", artist: "Queen", emotion: 'Energetic', popularity: 85 },
     { song: "Clair de Lune", artist: "Claude Debussy", emotion: 'Calm', popularity: 78 },
     { song: "Blinding Lights", artist: "The Weeknd", emotion: 'Energetic', popularity: 90 },
-    { song: "Imagine", artist: "John Lennon", emotion: 'Sad', popularity: 80 },
+    { song: "Imagine", artist: "John Lennon", emotion: 'Calm', popularity: 80 },
     { song: "Shape of You", artist: "Ed Sheeran", emotion: 'Happy', popularity: 95 },
     { song: "Stairway to Heaven", artist: "Led Zeppelin", emotion: 'Calm', popularity: 85 },
     { song: "Let It Be", artist: "The Beatles", emotion: 'Sad', popularity: 88 },
@@ -88,8 +100,6 @@ export const songs = [
     { song: "Smooth", artist: "Santana, Rob Thomas", emotion: 'Energetic', popularity: 86 },
     { song: "Don't Stop Believin'", artist: "Journey", emotion: 'Energetic', popularity: 88 },
     { song: "Stayin' Alive", artist: "Bee Gees", emotion: 'Energetic', popularity: 89 },
-    { song: "Imagine", artist: "John Lennon", emotion: 'Calm', popularity: 90 },
-    { song: "Rolling in the Deep", artist: "Adele", emotion: 'Energetic', popularity: 92 },
     { song: "Happy", artist: "Pharrell Williams", emotion: 'Happy', popularity: 93 },
     { song: "Let It Go", artist: "Idina Menzel", emotion: 'Energetic', popularity: 85 },
     { song: "Poker Face", artist: "Lady Gaga", emotion: 'Energetic', popularity: 84 },
@@ -114,8 +124,6 @@ export const songs = [
     { song: "Señorita", artist: "Shawn Mendes, Camila Cabello", emotion: 'Romantic', popularity: 92 },
     { song: "Perfect", artist: "Ed Sheeran", emotion: 'Romantic', popularity: 91 },
     { song: "Dance Monkey", artist: "Tones and I", emotion: 'Energetic', popularity: 90 },
-    { song: "Blinding Lights", artist: "The Weeknd", emotion: 'Energetic', popularity: 95 },
-    { song: "Rockstar", artist: "DaBaby, Roddy Ricch", emotion: 'Energetic', popularity: 88 },
     { song: "Watermelon Sugar", artist: "Harry Styles", emotion: 'Happy', popularity: 89 },
     { song: "Levitating", artist: "Dua Lipa", emotion: 'Energetic', popularity: 90 },
     { song: "Peaches", artist: "Justin Bieber, Daniel Caesar, Giveon", emotion: 'Happy', popularity: 88 },
@@ -128,5 +136,15 @@ export const songs = [
     { song: "Industry Baby", artist: "Lil Nas X, Jack Harlow", emotion: 'Energetic', popularity: 93 },
     { song: "Bad Habits", artist: "Ed Sheeran", emotion: 'Energetic', popularity: 92 },
     { song: "Easy On Me", artist: "Adele", emotion: 'Sad', popularity: 90 },
-    { song: "STAY", artist: "The Kid LAROI, Justin Bieber", emotion: 'Energetic', popularity: 91 }
+    { song: "Summer Days", artist: "Martin Garrix, Macklemore, Fall Out Boy", emotion: 'Energetic', popularity: 74 },
+    { song: "Love Me Like That", artist: "R5", emotion: 'Romantic', popularity: 43 },
+    { song: "Another Part of Me", artist: "Michael Jackson", emotion: 'Happy', popularity: 52 },
+    { song: "She Caught The Katy", artist: "The Blues Brothers", emotion: 'Happy', popularity: 44 },
+    { song: "Born in East L.A.", artist: "Cheech & Chong", emotion: 'Happy', popularity: 26 },
+    { song: "How Deep Is Your Love", artist: "Sean Paul", emotion: 'Romantic', popularity: 56 },
+    { song: "Somebody Loves Me", artist: "Perry Como", emotion: 'Happy', popularity: 18 },
+    { song: "Season Of The Witch", artist: "Joan Jett & The Blackhearts", emotion: 'Energetic', popularity: 41 },
+    { song: "Medal of Honor", artist: "C. S. Armstrong", emotion: 'Happy', popularity: 25 },
+    { song: "Never Met", artist: "Cautious Clay", emotion: 'Sad', popularity: 43 },
+    { song: "Enter the Eternal Fire", artist: "Bathory", emotion: 'Angry', popularity: 33 }
 ];

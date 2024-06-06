@@ -3,11 +3,23 @@ import { useNavigate } from 'react-router-dom';
 import { songs } from './songs';
 import './index.css';
 
+/**
+ * Search component that allows users to search for songs by emotion.
+ * Provides filtering and sorting capabilities for the music database.
+ * 
+ * @returns {JSX.Element} Search page with emotion-based filtering and sorting
+ */
 const Search = () => {
     const navigate = useNavigate();
     const [filteredSongs, setFilteredSongs] = useState([]);
     const [sortCriteria, setSortCriteria] = useState('song');
 
+    /**
+     * Filters songs based on user input emotion.
+     * Performs case-insensitive matching against emotion classifications.
+     * 
+     * @param {Event} e - Input change event
+     */
     const handleSearch = (e) => {
         const userInput = e.target.value.toLowerCase();
         const filtered = songs.filter(
@@ -16,10 +28,19 @@ const Search = () => {
         setFilteredSongs(filtered);
     };
 
+    /**
+     * Updates the sorting criteria for the results table.
+     * 
+     * @param {Event} e - Select change event
+     */
     const handleSortChange = (e) => {
         setSortCriteria(e.target.value);
     };
 
+    /**
+     * Sorts the filtered songs based on the selected criteria.
+     * Supports sorting by song name or artist name alphabetically.
+     */
     const sortedSongs = filteredSongs.sort((a, b) => {
         if (sortCriteria === 'song') {
             return a.song.localeCompare(b.song);
@@ -39,44 +60,30 @@ const Search = () => {
             </header>
             <main>
                 <div className="mainContainer">
+                    {/* Navigation sidebar */}
                     <div className="dash">
                         <ul>
-                            <li
-                                className="home"
-                                aria-label="Home page"
-                                onClick={() => navigate('/')}
-                            >
-                                <span className="material-symbols-outlined">
-                                    home
-                                </span>
+                            <li className="home" aria-label="Home page" onClick={() => navigate('/')}>
+                                <span className="material-symbols-outlined">home</span>
                                 <span className="dashText">HOME</span>
                             </li>
-                            <li
-                                className="search"
-                                aria-label="Search Page"
-                                onClick={() => navigate('/search')}
-                            >
-                                <span className="material-symbols-outlined">
-                                    search
-                                </span>
+                            <li className="search" aria-label="Search Page" onClick={() => navigate('/search')}>
+                                <span className="material-symbols-outlined">search</span>
                                 <span className="dashText">SEARCH</span>
                             </li>
-                            <li
-                                className="profile"
-                                aria-label="User profile"
-                                onClick={() => navigate('/profile')}
-                            >
-                                <span className="material-symbols-outlined">
-                                    person
-                                </span>
+                            <li className="profile" aria-label="User profile" onClick={() => navigate('/profile')}>
+                                <span className="material-symbols-outlined">person</span>
                                 <span className="dashText">PROFILE</span>
                             </li>
                         </ul>
                     </div>
+                    
+                    {/* Search interface */}
                     <div className="searchContainer">
                         <div className="searchHead">
                             <h2>Search</h2>
                             <div className="spacer"></div>
+                            {/* Emotion search input */}
                             <div className="searchButton">
                                 <input
                                     type="text"
@@ -85,6 +92,8 @@ const Search = () => {
                                     onChange={handleSearch}
                                 />
                             </div>
+                            
+                            {/* Sort options dropdown */}
                             <div className="sortSelection">
                                 <label htmlFor="sortSelect">Sort by:</label>
                                 <select
@@ -98,6 +107,7 @@ const Search = () => {
                             </div>
                         </div>
 
+                        {/* Results display */}
                         <div className="searchBody">
                             {sortedSongs.length === 0 ? (
                                 <p className='searchTextType'>Type in your emotion to search for songs.</p>
